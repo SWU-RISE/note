@@ -1,0 +1,44 @@
+[Python] main function:
+             if __name__ == '__main__':
+
+
+[Python] get main argument:
+         import sys
+         sys.argc: the number command line argument, sys.argv the array of command
+         arument node this sys.argv[0] is the program name
+
+
+[Python]  class defintion, object variable:
+          in __init__ function the object varibale first use without define
+
+[Python] xml read:
+
+XML:
+    <data>
+    <items>
+    <item name="item1"></item>
+    <item name="item2"></item>
+    <item name="item3"></item>
+    <item name="item4"></item>
+    </items>
+    </data>
+
+Python CODD:
+       from xml.dom import minidom
+       xmldoc = minidom.parse('items.xml')
+       itemlist = xmldoc.getElementsByTagName('item')
+       print(len(itemlist))
+       print(itemlist[0].attributes['name'].value)
+       for s in itemlist:
+           print(s.attributes['name'].value)
+
+ref: https://stackoverflow.com/questions/1912434/how-do-i-parse-xml-in-python
+
+
+
+
+
+
+
+
+          
