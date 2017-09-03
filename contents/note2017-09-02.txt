@@ -4,7 +4,11 @@
 #   [filename within code directory][tab character \t][subsection title]
 
 
-
 [Program Language]
 csvReader.hpp:  csv reader
+printAllDays.py:  print all days between two day
+listfiles.py:  list all file in a directory
+
+contain.py:    check whether a string in an other string
+
 

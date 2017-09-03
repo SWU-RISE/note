@@ -55,9 +55,9 @@ def texify(s):
 def get_tex(sections):
     tex = ''
     for (section_name, subsections) in sections:
-        tex += '\\section{%s}\n' % texify(section_name)
+        tex += '\\subsection{%s}\n' % texify(section_name)
         for (filename, subsection_name) in subsections:
-            tex += '\\subsection{%s}\n' % texify(subsection_name)
+            tex += '\\subsubsection{%s}\n' % texify(subsection_name)
             tex += '\\raggedbottom\\lstinputlisting[style=%s]{%s/%s}\n' % (get_style(filename), code_dir, filename)
             tex += '\\hrulefill\n'
         tex += '\n'
@@ -80,7 +80,7 @@ def get_allConttent():
             if b > 0:
                 sections = get_sections(filename)
                 tex = get_tex(sections)
-                allContent+='\\chapter{%s}\n' % texify(d)
+                allContent+='\\section{%s}\n' % texify(d)
                 allContent+=tex
 
     return allContent
