@@ -1,0 +1,2 @@
+[Latex]
+latexargmin.tex: get the argmin or argmax in Latex

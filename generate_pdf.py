@@ -43,6 +43,8 @@ def get_style(filename):
         return 'java'
     elif ext in ['py']:
         return 'py'
+    elif ext in ['tex']:
+        return 'tex'
     else:
         return 'txt'
 

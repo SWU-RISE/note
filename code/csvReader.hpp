@@ -6,7 +6,7 @@
 using namespace std;
 
 struct csv_reader : std::ctype<char> {
-  csv_reader() : std::ctype<char>(get_table()) {}
+x  csv_reader() : std::ctype<char>(get_table()) {}
   static std::ctype_base::mask const* get_table() {
     static std::vector<std::ctype_base::mask> rc(table_size,
                                                  std::ctype_base::mask());
@@ -41,3 +41,4 @@ struct csv_istream {
 
   istream& operator>>(streambuf* sb) { return is_ >> sb; }
 };
+
