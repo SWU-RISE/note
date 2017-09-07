@@ -10,7 +10,7 @@ x  csv_reader() : std::ctype<char>(get_table()) {}
   static std::ctype_base::mask const* get_table() {
     static std::vector<std::ctype_base::mask> rc(table_size,
                                                  std::ctype_base::mask());
-
+    // set split charcter set
     rc[','] = std::ctype_base::space;
     rc['\n'] = std::ctype_base::space;
     rc[' '] = std::ctype_base::space;

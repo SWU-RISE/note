@@ -9,11 +9,11 @@ title = "Liyun Dai Notebook"
         
         
 
-def get_sections(filename):
+def get_sections(filename1):
     
     sections = []
     section_name = None
-    with open(filename, 'r') as f:
+    with open(filename1, 'r') as f:
         for line in f:
             if '#' in line: line = line[:line.find('#')]
             line = line.strip()
@@ -28,6 +28,7 @@ def get_sections(filename):
                 if len(tmp) == 1:
                     raise ValueError('Subsection parse error: %s' % line)
                 filename = tmp[0]
+                filename.replace(" ","")
                 subsection_name = tmp[1]
                 if subsection_name is None:
                     raise ValueError('Subsection given without section')
