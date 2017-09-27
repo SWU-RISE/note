@@ -1,0 +1,2 @@
+[shell]
+assignment.sh: useage of "="  operator
