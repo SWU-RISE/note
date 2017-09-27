@@ -1,2 +1,6 @@
 [shell]
 assignment.sh: useage of "="  operator
+readerlatexdoucment.sh: read latex package mannual command
+[Latex]
+addfream.tex: add frame for content
+
