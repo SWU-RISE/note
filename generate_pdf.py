@@ -4,8 +4,6 @@ import os
 code_dir = "code"
 title = "Liyun Dai Notebook"
 
-
-
         
         
 
@@ -44,6 +42,8 @@ def get_style(filename):
         return 'java'
     elif ext in ['py']:
         return 'py'
+    elif ext in ['sh']:
+        return 'sh'
     elif ext in ['tex']:
         return 'tex'
     else:
