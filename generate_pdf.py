@@ -96,3 +96,6 @@ if __name__ == "__main__":
         f.write(tex)
     latexmk_options = ["latexmk", "-pdf", "notebook.tex"]
     subprocess.call(latexmk_options)
+    os.system("git add  code/* ")
+    os.system('git commit -a -m "oK"')
+    os.system('git push')
