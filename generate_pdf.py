@@ -35,6 +35,7 @@ def get_sections(filename1):
 
 
 def get_style(filename):
+    filename= filename.strip()
     ext = filename.lower().split('.')[-1]
     if ext in ['c', 'cc', 'cpp', 'h', 'hpp']:
         return 'cpp'
