@@ -1,2 +1,2 @@
 [C]
-tempifle.c : Usage of temp file
+tempifle.c: Usage of temp file
