@@ -1,0 +1,3 @@
+[Program test]
+beyonglivescopebug.cpp: a common which live scope beyond expected
+
