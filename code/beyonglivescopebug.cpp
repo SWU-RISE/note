@@ -1,4 +1,4 @@
-Poly_t::Term temp_term; //a bug becuase temp_term's expected live scope is beflow for loop
+Poly_t::Term temp_term; //a bug becuase temp_term's expected live scope is follow [for loop]
 for (j = 0; j < blockSize; j += 1) {
   for (size_t k = 0; k < vars.size(); k++) {
     temp_term.key.push_back(make_pair(vars[k], Z[j * varNum + k]));
