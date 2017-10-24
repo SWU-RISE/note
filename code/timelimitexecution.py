@@ -1,5 +1,8 @@
 from multiprocessing import Process
 from time import sleep
+def test(t):
+    sleep(t)
+
 
 def run_with_limited_time(func, args, kwargs, time):
     """Runs a function with time limit
@@ -18,3 +21,7 @@ def run_with_limited_time(func, args, kwargs, time):
         return False
 
     return True
+
+if __name__ == "__main__":
+    run_with_limited_time(test,(5,),{}, 6) # return True
+    run_with_limited_time(test,(7,),{}, 6) # return False
