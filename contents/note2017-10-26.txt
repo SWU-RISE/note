@@ -1,0 +1,2 @@
+[Latex]
+onelabel.tex: multi line of align but only have one label
