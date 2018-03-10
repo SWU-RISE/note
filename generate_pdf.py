@@ -3,8 +3,6 @@ import subprocess
 import os
 code_dir = "code"
 title = "Liyun Dai Notebook"
-
-        
         
 
 def get_sections(filename1):
@@ -72,6 +70,7 @@ def get_allConttent():
     allContent=''
     fileList=os.listdir("contents")
     fileList.sort()
+    preNum=0
     for filename in fileList:
         if 'note' == filename[0:4]:
             d=filename[4:14]
@@ -82,10 +81,26 @@ def get_allConttent():
 
 
             if b > 0:
+                preNum=preNum+1
                 sections = get_sections(filename)
                 tex = get_tex(sections)
                 allContent+='\\section{%s}\n' % texify(d)
                 allContent+=tex
+    tempNum=0
+    for filename in fileList:
+        if 'note' == filename[0:4]:
+            d=filename[4:14]
+
+            filename="contents/"+filename
+            
+            b=os.path.getsize(filename)
+
+            if b > 0:
+                tempNum=tempNum+1
+            else:
+                os.remove(filename)
+            if tempNum>=preNum:
+                break
 
     return allContent
 if __name__ == "__main__":
