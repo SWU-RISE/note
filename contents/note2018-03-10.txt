@@ -1,2 +1,2 @@
 [Linux ]
-findprocess.txt: Find the process which hold the file
+findprocess.sh: Find the process which hold the file
