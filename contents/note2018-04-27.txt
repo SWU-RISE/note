@@ -1,3 +1,6 @@
 [Shell]
 installlatexclassfile.py: install latex class file command
+resetgitremote.py :Adding a remote
+
+
 
