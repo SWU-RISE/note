@@ -1,3 +1,5 @@
 [Shell]
 gitremotereset.sh: Switching remote URLs from SSH to HTTPS
 
+psqlchangejsonb.sh: How to convert text to jsonb entirely for a postgresql column
+
