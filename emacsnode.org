@@ -1,0 +1,24 @@
+#+TITLE: My Notebook
+#+AUTHOR: Liyun Dai (dailiyun2009@163.com)
+#+EMAIL: dailiyun2009@163.com
+
+
+* Ubuntu connect internet by command
+1. List all interface command /ifconfig -a/
+2. Start one interface /sudo ifconfig [eth0] up/
+3. Close one interface /sudo ifconfig [eth0] down/
+4. Scan all available wifi /sudo iw dev [wlan0] scan | less/
+5. Connect a wifi without password /sudo iw dev [wlan0] connect [ssid]/
+6. Connect a wifi with WEP mode password  /sudo iw dev [wlan0]  key 0:[password]/
+7. Connect a widi with WAP mode password 
+  + Generate wap config file /wpa_passphrase [ssid] [password] > wpa.conf/
+  + Connect internet /wpa_passphrase [wlan]  > wpa.conf/
+
+
+
+
+
+
+
+
+
