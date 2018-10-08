@@ -46,4 +46,64 @@ sudo iw dev [wlan0]  key 0:[password]
    #+END_SRC
 
 
+* Begining Linux Programming 4th Edition
+<2018-10-08 一>
+** Getting Started
+UNIX Philosophy
++ Simplicity
++ Focus
++ Resuable Components
++ Filters
+
++ Open File Formats
+Util envoroment variables
++ Execute search paths PATH
+   #+BEGIN_SRC  sh :results output
+echo $PATH
+   #+END_SRC
+
+   #+RESULTS:
+   : /home/yun/bin:/home/yun/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/yun/bin:/home/yun/jdk1.8.0_181/bin
+
++ Generate static link lib
+  #+BEGIN_SRC  sh :results output
+ar crv libfoo.a bill.o fred.o
+randlib libfoo.a
+  #+END_SRC
+
+
+** Shell Programming
+1. If you prefer to capture both sets of output into a single file, you can use the >& operator to combine the
+two outputs. Therefore,
+  #+BEGIN_SRC  sh :results output
+kill -HUP 1234 >killout.txt 2>killerr.txt
+  #+END_SRC
+
+
+2. If you prefer to capture both sets of output into a single file, you can use the >& operator to combine the
+two outputs. Therefore,
+  #+BEGIN_SRC  sh :results output
+kill -1 1234 >killouterr.txt 2>&1
+  #+END_SRC
+
+3. Useful Environment variable
++ $0 The name of the shell script
++ $# The number of parameters passed
++ \$ \$ The process ID of the shell script, often used inside a script for generating unique temporary filenames; for example /tmp/tmpfile_$$
+
+4. That looks good, except that you also find the current directory, which you didn’t want. You were inter-
+ested only in regular files, so you add an additional test , -type f :
+  #+BEGIN_SRC  sh :results output
+find . -newer while2 -type f 
+  #+END_SRC
+
+5. Now find files that either start with an underscore or are newer than the file while2 , but must in either
+case be regular files. This will show you how to combine tests using parentheses:
+
+  #+BEGIN_SRC  sh :results output
+find . \( -name “_*“ -or -newer while2 \) -type f
+  #+END_SRC
+
+
+
 
