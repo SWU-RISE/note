@@ -4,21 +4,46 @@
 
 
 * Ubuntu connect internet by command
-1. List all interface command /ifconfig -a/
-2. Start one interface /sudo ifconfig [eth0] up/
-3. Close one interface /sudo ifconfig [eth0] down/
-4. Scan all available wifi /sudo iw dev [wlan0] scan | less/
-5. Connect a wifi without password /sudo iw dev [wlan0] connect [ssid]/
-6. Connect a wifi with WEP mode password  /sudo iw dev [wlan0]  key 0:[password]/
+<2018-10-08 一>
+1. List all interface command
+#+BEGIN_SRC  shell
+ ifconfig -a
+#+END_SRC
+
+2. Start one interface
+#+BEGIN_SRC  shell
+sudo ifconfig [eth0] up
+#+END_SRC
+3. Close one interface 
+#+BEGIN_SRC  shell
+sudo ifconfig [eth0] down
+#+END_SRC
+4. Scan all available wifi 
+#+BEGIN_SRC  shell
+sudo iw dev [wlan0] scan | less
+#+END_SRC
+5. Connect a wifi without password 
+#+BEGIN_SRC  shell
+sudo iw dev [wlan0] connect [ssid]
+#+END_SRC
+
+6. Connect a wifi with WEP mode password  
+#+BEGIN_SRC  shell
+sudo iw dev [wlan0]  key 0:[password]
+#+END_SRC
 7. Connect a widi with WAP mode password 
-  + Generate wap config file /wpa_passphrase [ssid] [password] > wpa.conf/
-  + Connect internet /wpa_passphrase [wlan]  > wpa.conf/
-
-
-
-
-
-
+  + Generate wap config file 
+   #+BEGIN_SRC  shell
+   wpa_passphrase [ssid] [password] > wpa.conf
+   #+END_SRC
+  + Connect internet 
+   #+BEGIN_SRC  shell
+   wpa_supplicant -i [wlan0] -B -c ./wpa.conf
+   #+END_SRC
+  + Obtain ip adress
+   #+BEGIN_SRC  shell
+   dhclient [wlan0]
+   #+END_SRC
 
 
 
