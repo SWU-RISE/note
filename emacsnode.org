@@ -107,3 +107,25 @@ find . \( -name “_*“ -or -newer while2 \) -type f
 
 
 
+
+* ssh login with out password
+<2018-10-11 四>
+There are two PCs A and  B. B wants to login in A without
+password throud ssh 
+1. Run following command on B 
+   #+BEGIN_SRC  shell
+ ssh-keygen -t rsa -P ''
+   #+END_SRC
+2. Copy the key of B to A
+ +   Genertate ssh key
+  #+BEGIN_SRC  shell
+ scp .ssh/id_rsa.pub to [usr]@[A ip]:~/
+   #+END_SRC
+ + Add B's ssh key to authorized_keys on A
+  #+BEGIN_SRC  shell
+ cat id_rsa.pub >> .ssh/authorized_keys
+  #+END_SRC
+
+
+
+
