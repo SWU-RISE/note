@@ -129,3 +129,12 @@ password throud ssh
 
 
 
+
+* English paper common wrong usage
+
+   + +In section+ ->  In Section
+   + +at the begining+ -> in the begining 
+   + +an univariate polynomial+ -> a univariate polynomial
+   + +By assumption xxx+ -> By assumption, xxx
+
+
