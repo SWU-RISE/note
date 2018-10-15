@@ -138,3 +138,7 @@ password throud ssh
    + +By assumption xxx+ -> By assumption, xxx
 
 
+
+* Java non-static inner class has implict reference for outer class
+**  http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2014/1106/1922.html
+** https://blog.csdn.net/zmx729618/article/details/54093532
