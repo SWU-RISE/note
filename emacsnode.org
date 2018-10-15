@@ -142,3 +142,15 @@ password throud ssh
 * Java non-static inner class has implict reference for outer class
 **  http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2014/1106/1922.html
 ** https://blog.csdn.net/zmx729618/article/details/54093532
+
+* Online JudgeMent seminar
+** Tingtine Test online editor
+<2018-10-15 一>
++ Test id not start 1
++ Choice test want to inset figure 
++ flush to save to data
++ settting point for evert test
+** xuelian
++ Lige abstact syntax tree (AST)
++ Data-inconsistent Java
+
