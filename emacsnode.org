@@ -163,6 +163,7 @@ password throud ssh
 * Online Table Project
 ** Server build
 *** Ubuntu 16.04
+<2018-10-16 二>
     1. Setup apache2
     #+BEGIN_SRC  shell
      sudo apt-get install apache2
@@ -173,3 +174,26 @@ password throud ssh
      sudo apt-get install libapache2-mod-php7.0 php7.0 php7.0-gd php7.0-mysql
      sudo /etc/init.d/apache2 restart
     #+END_SRC 
+
+    3. Setup mysql
+    #+BEGIN_SRC  shell
+    sudo apt install mysql-server php7.0-mysql
+    sudo apt-get install mysql-client
+    sudo /etc/init.d/apache2 restart
+    #+END_SRC 
+
+    4. 安装phpmyadmin
+
+    #+BEGIN_SRC  shell
+     sudo apt-get install phpmyadmin
+     sudo apt-get install php-mbstring
+     sudo apt-get install php-gettext
+     sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin
+    #+END_SRC 
+
+    5. 配置phpmyadmin
+    #+BEGIN_SRC  shell
+    sudo emacs /etc/php/7.0/apache2/php.ini
+    #+END_SRC 
+    display_errors = On(显示错误日志，出现两次，都要改，不然无效)
+    extension=php_mbstring.dll (开启mbstring)
