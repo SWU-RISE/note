@@ -110,3 +110,51 @@ find . \( -name “_*“ -or -newer while2 \) -type f
 
 
 
+
+* ssh login with out password
+<2018-10-11 四>
+There are two PCs A and  B. B wants to login in A without
+password throud ssh 
+1. Run following command on B 
+   #+BEGIN_SRC  shell
+ ssh-keygen -t rsa -P ''
+   #+END_SRC
+2. Copy the key of B to A
+ +   Genertate ssh key
+  #+BEGIN_SRC  shell
+ scp .ssh/id_rsa.pub to [usr]@[A ip]:~/
+   #+END_SRC
+ + Add B's ssh key to authorized_keys on A
+  #+BEGIN_SRC  shell
+ cat id_rsa.pub >> .ssh/authorized_keys
+  #+END_SRC
+
+
+
+
+
+* English paper common wrong usage
+
+   + +In section+ ->  In Section
+   + +at the begining+ -> in the begining 
+   + +an univariate polynomial+ -> a univariate polynomial
+   + +By assumption xxx+ -> By assumption, xxx
+   + +I.e+ -> I.e.,  
+
+
+
+* Java non-static inner class has implict reference for outer class
+**  http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2014/1106/1922.html
+** https://blog.csdn.net/zmx729618/article/details/54093532
+
+* Online JudgeMent seminar
+** Tingtine Test online editor
+<2018-10-15 一>
++ Test id not start 1
++ Choice test want to inset figure 
++ flush to save to data
++ settting point for evert test
+** xuelian
++ Lige abstact syntax tree (AST)
++ Data-inconsistent Java
+
