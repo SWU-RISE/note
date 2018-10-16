@@ -147,6 +147,7 @@ password throud ssh
 **  http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2014/1106/1922.html
 ** https://blog.csdn.net/zmx729618/article/details/54093532
 
+
 * Online JudgeMent seminar
 ** Tingtine Test online editor
 <2018-10-15 一>
@@ -158,3 +159,17 @@ password throud ssh
 + Lige abstact syntax tree (AST)
 + Data-inconsistent Java
 
+
+* Online Table Project
+** Server build
+*** Ubuntu 16.04
+    1. Setup apache2
+    #+BEGIN_SRC  shell
+     sudo apt-get install apache2
+     sudo /etc/init.d/apache2 restart
+    #+END_SRC 
+    2. Setup php7
+    #+BEGIN_SRC  shell
+     sudo apt-get install libapache2-mod-php7.0 php7.0 php7.0-gd php7.0-mysql
+     sudo /etc/init.d/apache2 restart
+    #+END_SRC 
