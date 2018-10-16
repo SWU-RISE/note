@@ -136,6 +136,7 @@ password throud ssh
    + +at the begining+ -> in the begining 
    + +an univariate polynomial+ -> a univariate polynomial
    + +By assumption xxx+ -> By assumption, xxx
+   + +I.e+ -> I.e.,  
 
 
 
