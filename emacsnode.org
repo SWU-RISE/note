@@ -45,9 +45,10 @@ sudo iw dev [wlan0]  key 0:[password]
    #+END_SRC
 
 
-* Begining Linux Programming 4th Edition
+* Reading books
+** Begining Linux Programming 4th Edition
 <2018-10-08 一>
-** Getting Started
+*** Getting Started
 UNIX Philosophy
 + Simplicity
 + Focus
@@ -70,7 +71,7 @@ ar crv libfoo.a bill.o fred.o
 randlib libfoo.a
   #+END_SRC
 
-** Shell Programming
+*** Shell Programming
 1. If you prefer to capture both sets of output into a single file, you can use the >& operator to combine the
 two outputs. Therefore,
   #+BEGIN_SRC  sh :results output
@@ -102,12 +103,20 @@ case be regular files. This will show you how to combine tests using parentheses
 find . \( -name “_*“ -or -newer while2 \) -type f
   #+END_SRC
 
-** Working with Files
+*** Working with Files
 
-* Linux kernel source code read 0.11
+** Linux kernel source code read 0.11
 <2018-10-08 一>
 
+** Reading Computer Architecture (A Quantitiative Approach) John L. Hennessy
 
+
+** Android in Action
+
+** Decision Procedures (Second Edition)
+   Satisfiability Modulo Theories -> SMT
+   propositional logic -> 命题逻辑
+***   Chapter1 Introduction and Basic Concepts
 
 
 
@@ -197,3 +206,12 @@ password throud ssh
     #+END_SRC 
     display_errors = On(显示错误日志，出现两次，都要改，不然无效)
     extension=php_mbstring.dll (开启mbstring)
+
+
+
+
+
+*
+
+
+
