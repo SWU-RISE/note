@@ -116,7 +116,34 @@ find . \( -name “_*“ -or -newer while2 \) -type f
 ** Decision Procedures (Second Edition)
    Satisfiability Modulo Theories -> SMT
    propositional logic -> 命题逻辑
+<2018-10-19 五>
 ***   Chapter1 Introduction and Basic Concepts
+
+
+
+      + Deduction :: using inference rules (proof-theoretic)
+      + Enumeration :: using search based method
+      + Soundness of a procedure :: A procedure for a decision problem is sound if, when it returns “Valid”, the input formula is valid.
+      + Completeness of a procedure :: A procedure for a decision problem is complete if
+           + it always terminates, and
+           + it returns “Valid” when the input formula is valid.           
+      + Decision procedure :: A procedure is called a decision procedure for T if it is sound and complete with respect to every formula of T .
+      + Decidability of a theory :: A theory is decidable if and only if there is a decision procedure for it.
+      
+
+        *When there is no way to predict the relative performance of procedures without actually running them, they can be run in parallel, with a “first-to-end kills all others” policy. This is a common practice in industry.*
+
+        + De Morgan’s rules ::
+#+BEGIN_LATEX
+\begin{align}
+\neg (a\vee b) \equiv (\neg a \wedge \neg b)\\
+\neg (a \wedge b) \equiv (\neg a \vee \neg b)
+\end{align}
+#+END_LATEX
+        + Literal :: A literal is either an atom or its negation.
+
+        Every formula with a Boolean structure can be transformed into DNF, while potentially increasing the size of the formula exponentially.
+
 
 
 
@@ -131,7 +158,7 @@ password throud ssh
 2. Copy the key of B to A
  +   Genertate ssh key
   #+BEGIN_SRC  shell
- scp .ssh/id_rsa.pub to [usr]@[A ip]:~/
+ scp ~/.ssh/id_rsa.pub  [usr]@[A ip]:~/
    #+END_SRC
  + Add B's ssh key to authorized_keys on A
   #+BEGIN_SRC  shell
