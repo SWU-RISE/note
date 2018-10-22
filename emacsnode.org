@@ -45,6 +45,7 @@ sudo iw dev [wlan0]  key 0:[password]
    #+END_SRC
 
 
+
 * Reading books
 ** Begining Linux Programming 4th Edition
 <2018-10-08 一>
@@ -113,13 +114,12 @@ find . \( -name “_*“ -or -newer while2 \) -type f
 
 ** Android in Action
 
+
 ** Decision Procedures (Second Edition)
    Satisfiability Modulo Theories -> SMT
    propositional logic -> 命题逻辑
 <2018-10-19 五>
 ***   Chapter1 Introduction and Basic Concepts
-
-
 
       + Deduction :: using inference rules (proof-theoretic)
       + Enumeration :: using search based method
@@ -134,6 +134,9 @@ find . \( -name “_*“ -or -newer while2 \) -type f
         *When there is no way to predict the relative performance of procedures without actually running them, they can be run in parallel, with a “first-to-end kills all others” policy. This is a common practice in industry.*
 
         + De Morgan’s rules ::
+<2018-10-20 六>
+
+
 #+BEGIN_LATEX
 \begin{align}
 \neg (a\vee b) \equiv (\neg a \wedge \neg b)\\
@@ -147,7 +150,13 @@ find . \( -name “_*“ -or -newer while2 \) -type f
 
 
 
-* ssh login with out password
+** Network Flows Theory Algorithms and Applications
+   If you would not be forgotten, As soon as you are dead and rotten, Either write things worthy reading, Or do things worth the writting. --Beniamin Franklin
+
+
+
+* linux util
+** ssh login with out password
 <2018-10-11 四>
 There are two PCs A and  B. B wants to login in A without
 password throud ssh 
@@ -166,7 +175,60 @@ password throud ssh
   #+END_SRC
 
 
+** linux如何查看端口被哪个进程占用的方法
+   +
+      #+BEGIN_SRC  shell 
+   lsof -i:端口号
+      #+END_SRC
 
+   +
+      #+BEGIN_SRC  shell 
+      netstat -tunlp|grep 端口号
+      #+END_SRC
+**  docker：搭建lamp应用
+    + 
+       #+BEGIN_SRC  shell 
+       docker pull tutum/lamp
+       #+END_SRC
+    + 
+       #+BEGIN_SRC  shell 
+       docker run -d -p 8080:80 -p 3306:3306 tutum/lamp
+       #+END_SRC
+** docker 进入airline 的方法
+       #+BEGIN_SRC  shell 
+       docker exec -it [imageID] sh
+       #+END_SRC
+** docker airline 下安装程序的命令
+       #+BEGIN_SRC  shell 
+       apk add [package]
+       #+END_SRC
+** docker：搭建lamp应用
+       + 从网站上 pull 一个 lamp 镜像 ::
+       #+BEGIN_SRC  shell 
+       docker pull tutum/lamp
+       #+END_SRC
+
+       + 使用默认方式启动 lamp 容器 ::
+       #+BEGIN_SRC  shell 
+       docker run -d -p 8080:80 -p 3306:3306 tutum/lamp
+       #+END_SRC
+
+       + 部署自己的 PHP 应用 ::
+       #+BEGIN_SRC  shell 
+       mkdir php
+       touch Dockerfile
+       vi Dockerfile
+       docker build -t dockerpool/my-lamp-app .
+       #+END_SRC
+       Dockerfile 内容如下：
+       [[./Dockerfile][Dockerfile]]
+
+       + 再次启动自己的容器就完成部署了 ::
+       #+BEGIN_SRC  shell 
+       docker stop [tutum/lamp ID]
+       docker rm [tutum/lamp ID]
+       docker run -d -p 8080:80 -p 3306:3306 dockerpool/my-lamp-app
+       #+END_SRC
 
 
 * English paper common wrong usage
