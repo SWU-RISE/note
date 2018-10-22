@@ -230,6 +230,9 @@ password throud ssh
        docker run -d -p 8080:80 -p 3306:3306 dockerpool/my-lamp-app
        #+END_SRC
 
+** linux 定时任务
+http://blogjava.net/freeman1984/archive/2010/09/23/332715.html
+
 
 * English paper common wrong usage
 
