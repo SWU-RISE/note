@@ -231,7 +231,30 @@ password throud ssh
        #+END_SRC
 
 ** linux 定时任务
-http://blogjava.net/freeman1984/archive/2010/09/23/332715.html
+
+      + 编辑crontab服务文件 ::
+       #+BEGIN_SRC  shell 
+       crontab  -u [user] -e 
+      #+END_SRC
+      + 查看该用户下的crontab服务是否创建成功 ::
+      #+BEGIN_SRC  shell 
+      crontab -u [user] -l
+      #+END_SRC
+      +  启动crontab服务  ::
+                  -         
+                 #+BEGIN_SRC  shell 
+                    /sbin/service crond start
+                 #+END_SRC
+                 - 或者是
+                 #+BEGIN_SRC  shell 
+                    sudo service crond start
+                 #+END_SRC
+      +  查看服务是否已经运行用 ::
+                 #+BEGIN_SRC  shell 
+                     ps -ax | grep cron 
+                 #+END_SRC
+
+[[http://blogjava.net/freeman1984/archive/2010/09/23/332715.html][参考]]
 
 
 * English paper common wrong usage
