@@ -267,6 +267,18 @@ password throud ssh
 
 [[http://blogjava.net/freeman1984/archive/2010/09/23/332715.html][参考]]
 
+* Docker
+** 使用阿里云加速Docker
+/etc/docker/daemon.json 中添加一段配置。如果没有该文件则创建。
+{
+    "registry-mirrors": ["<your accelerate address>"]
+}
+
+** 重启Docker服务
+       #+BEGIN_SRC  shell 
+        sudo systemctl daemon-reload
+        sudo systemctl restart docker
+      #+END_SRC
 
 * English paper common wrong usage
 
