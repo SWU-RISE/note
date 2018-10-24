@@ -190,10 +190,15 @@ password throud ssh
        #+BEGIN_SRC  shell 
        docker pull tutum/lamp
        #+END_SRC
-    + 
+    + Start
        #+BEGIN_SRC  shell 
        docker run -d -p 8080:80 -p 3306:3306 tutum/lamp
        #+END_SRC
+    + Check docker log
+       #+BEGIN_SRC  shell 
+       docker logs [容器ID]
+       #+END_SRC
+[[https://blog.csdn.net/smallfish1983/article/details/40108999][   Blog ]]
 ** docker 进入airline 的方法
        #+BEGIN_SRC  shell 
        docker exec -it [imageID] sh
@@ -229,7 +234,12 @@ password throud ssh
        docker rm [tutum/lamp ID]
        docker run -d -p 8080:80 -p 3306:3306 dockerpool/my-lamp-app
        #+END_SRC
-
+       
+       + 查看容器的log
+       #+BEGIN_SRC  shell 
+        docker logs [容器ID]
+       #+END_SRC
+[[https://blog.csdn.net/smallfish1983/article/details/40108999][Blog]]
 ** linux 定时任务
 
       + 编辑crontab服务文件 ::
