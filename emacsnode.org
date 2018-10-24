@@ -280,6 +280,9 @@ password throud ssh
         sudo systemctl restart docker
       #+END_SRC
 
+** gitLab
+[[https://blog.csdn.net/u011054333/article/details/61532271][reference]]
+
 * English paper common wrong usage
 
    + +In section+ ->  In Section
