@@ -267,6 +267,7 @@ password throud ssh
 
 [[http://blogjava.net/freeman1984/archive/2010/09/23/332715.html][参考]]
 
+
 * Docker
 ** 使用阿里云加速Docker
 /etc/docker/daemon.json 中添加一段配置。如果没有该文件则创建。
@@ -281,7 +282,43 @@ password throud ssh
       #+END_SRC
 
 ** gitLab
+   + 下载Gitlab ::
+       #+BEGIN_SRC  shell 
+       sudo docker pull gitlab/gitlab-ce:latest
+      #+END_SRC
+   + 启动Gitlab ::
+       #+BEGIN_SRC  shell 
+sudo docker run --detach \ --hostname gitlab.example.com \
+--publish 443:443 --publish 80:80 --publish 22:22 \
+--name gitlab \
+--restart always \
+--volume /srv/gitlab/config:/etc/gitlab \
+--volume /srv/gitlab/logs:/var/log/gitlab \
+--volume /srv/gitlab/data:/var/opt/gitlab \
+gitlab/gitlab-ce:latest
+      #+END_SRC
+  + 更新Gitlab ::
+       #+BEGIN_SRC  shell 
+sudo docker stop gitlab
+sudo docker rm gitlab
+      #+END_SRC
+  + 拉取最新版的Gitlab ::
+  #+BEGIN_SRC  shell 
+sudo docker pull gitlab/gitlab-ce:latest
+  #+END_SRC
+然后在使用上次的配置运行Gitlab即可。不用担心数据会丢失。只要你的volume参数指定还和上次一样，Gitlab就会自动读取这些配置。
+  #+BEGIN_SRC  shell 
+sudo docker run --detach \ --hostname gitlab.example.com \
+--publish 443:443 --publish 80:80 --publish 22:22 \
+--name gitlab \
+--restart always \
+--volume /srv/gitlab/config:/etc/gitlab \
+--volume /srv/gitlab/logs:/var/log/gitlab \
+--volume /srv/gitlab/data:/var/opt/gitlab \
+gitlab/gitlab-ce:latest
+  #+END_SRC
 [[https://blog.csdn.net/u011054333/article/details/61532271][reference]]
+
 
 * English paper common wrong usage
 
