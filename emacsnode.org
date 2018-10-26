@@ -319,14 +319,54 @@ gitlab/gitlab-ce:latest
   #+END_SRC
 [[https://blog.csdn.net/u011054333/article/details/61532271][reference]]
 
+
 * Mysql
 ** Execute sql file by command line
        #+BEGIN_SRC  shell 
         source [sql file]
-      #+END_SRC
+       #+END_SRC
 在MySQL数据库，使用SQL语句如何查看一个数据库中所有的存储过程，比
 如我们查看所有表可以使用 /show tables/ ;，查看所有数据库，则可以使用命令 
 /show databases/ ;。
+
+** Mysql PHP
+       + PHP MySQL 连接数据库 ::
+      #+BEGIN_SRC  shell 
+        mysql_connect(servername,username,password);
+       #+END_SRC
+       + Example ::
+      #+BEGIN_SRC  shell 
+<?php
+$con = mysql_connect("localhost","peter","abc123");
+if (!$con)
+  {
+  die('Could not connect: ' . mysql_error());
+  }
+
+// some code
+
+?>
+      #+END_SRC
+       + 关闭连接 ::
+      #+BEGIN_SRC  shell 
+       mysql_close() 
+      #+END_SRC
+      + Example ::
+      #+BEGIN_SRC  shell 
+<?php
+$con = mysql_connect("localhost","peter","abc123");
+if (!$con)
+  {
+  die('Could not connect: ' . mysql_error());
+  }
+
+// some code
+
+mysql_close($con);
+?>
+        #+END_SRC
+
+
 
 * English paper common wrong usage
 
