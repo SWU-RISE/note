@@ -1,5 +1,6 @@
 #+TITLE: My Notebook
 #+AUTHOR: Liyun Dai (dailiyun2009@163.com)
+
 #+EMAIL: dailiyun2009@163.com
 
 * Ubuntu connect internet by command
@@ -368,6 +369,27 @@ mysql_close($con);
 
 
 
+* Timed Automata
+
+** Timed Automata: Semantics, Algorithms and Tools (Johan Bengtsson and Wang yi)
+
++ Timed Büchi Automata ::
+A guard on an edge of an automaton is only an enabling con-
+dition of the transition represented by the edge; but it can not force the transition to
+be taken. For instance, the example automaton may stay forever in any location, just
+idling. Büchi-acceptance conditions; a subset of the locations in the automaton are marked as
+accepting, and only those executions passing through an accepting location infinitely
+often are considered valid behaviors of the automaton.
+
++ Timed Safety Automata ::
+Instead of accepting conditions, in timed safety automata, loca-
+tions may be put local timing constraints called location invariants. An automaton may
+remain in a location as long as the clocks values satisfy the invariant condition of the
+location.
+
+
+
+
 * English paper common wrong usage
 
    + +In section+ ->  In Section
@@ -375,6 +397,7 @@ mysql_close($con);
    + +an univariate polynomial+ -> a univariate polynomial
    + +By assumption xxx+ -> By assumption, xxx
    + +I.e+ -> I.e.,  
+   +  x, y etc.standing for clocks
 
 
 
@@ -434,10 +457,6 @@ mysql_close($con);
     extension=php_mbstring.dll (开启mbstring)
 
 
-
-
-
-*
 
 
 
