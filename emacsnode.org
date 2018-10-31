@@ -368,8 +368,45 @@ mysql_close($con);
 ?>
         #+END_SRC
 
+** 解决中文乱码
+      + API ::
+      #+BEGIN_SRC  shell 
+         mysqli_set_charset($conn,"utf8");
+        #+END_SRC
+      + Example :: 
+      #+BEGIN_SRC  shell 
+ <?php
 
+         $conn= new mysqli(host,user,password,database);
 
+         if($conn){
+         echo '连接成功';
+         }else{
+         echo '连接失败';
+         }
+         mysqli_set_charset($conn,"utf8");
+
+         $charset=mysqli_character_set_name($conn);
+
+         $sqls="select * from cases";
+
+         $retval = mysqli_query($conn,$sqls);
+         $num=mysqli_num_rows($retval);
+
+         for ($i=0; $i <$num ; $i++) {
+                             $row=mysqli_fetch_assoc($retval);
+                             $id=$row['ID'];
+                             $name=$row['name'];
+                             $info=$row['info'];
+                             $num1=$row['memberLimit'];
+
+                             echo "<tr><td>".$id."</td><td>".$name."</td><td>".$info."</td><td>".$num1."</td> </tr>";
+
+                             }
+
+                             ?>
+
+        #+END_SRC
 * English paper common wrong usage
 
    + +In section+ ->  In Section
