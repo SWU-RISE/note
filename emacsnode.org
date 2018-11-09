@@ -502,3 +502,14 @@ location.
 
 
 
+
+
+* Paper
+** Timed Automata
+1. 
+_Idea_
+Look the automata as a directed graph.
+Using graph decompisition method to divide the graph to some smaller graph then analysis the smaller graph one by one by.
+The concrete algorithm using strange connect compoment method to divide graph.
+2. 
+
