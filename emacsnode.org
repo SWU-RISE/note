@@ -270,6 +270,38 @@ password throud ssh
 
 [[http://blogjava.net/freeman1984/archive/2010/09/23/332715.html][参考]]
 
+** 硬盘挂载、分区、格式化为ext4格式
+1. 第一步：添加硬盘/新建分区（fdisk）（此步骤非必须
++ 第一步：添加硬盘/新建分区（fdisk）
+   1. a、查看当前系统所有硬盘及分区情况 
+       #+BEGIN_SRC  shell 
+       fdisk -l
+      #+END_SRC
+   2. b、在指定的硬盘（例：/dev/sda）上创建分区：fdisk /dev/sdb ， 根据提示进行下一步操作，如：查看帮助（h），新建分区（n），删除分区（d），查看分区情况（p）
+
+   3. c、分区成功后，写分区表并退出（w）
+
+  
+2. 第二步：格式化分区（mkfs.ext4）
+对新建分区（例：/dev/sda1）进行格式化：
+       #+BEGIN_SRC  shell 
+mkfs.ext4 /dev/sdb1 
+      #+END_SRC
+3. 第三步：加载分区（mount）
+a、创建分区挂接目录，例：
+       #+BEGIN_SRC  shell 
+mkdir /disk-cache-1
+      #+END_SRC
+ 和
+       #+BEGIN_SRC  shell 
+ mkdir /disk-cache-2
+      #+END_SRC
+b、编辑 /etc/fstab 配置文件，将分区信息写进去。
+
+c、加载新建分区：
+       #+BEGIN_SRC  shell 
+mount -a
+      #+END_SRC
 
 * Docker
 ** 使用阿里云加速Docker
@@ -453,6 +485,19 @@ location.
       #+BEGIN_SRC  shell 
       http://yourname:password@git.oschina.net/name/project.git
      #+END_SRC
+
+** Changing a remote's URL
++ List your existing remotes in order to get the name of the remote you want to change ::
+      #+BEGIN_SRC  shell 
+      git remote -v
+     #+END_SRC
+
++ Change your remote's URL from SSH to HTTPS with the git remote set-url command. ::
+      #+BEGIN_SRC  shell 
+     git remote set-url origin [https://github.com/USERNAME/REPOSITORY.git]
+     #+END_SRC
+
+
 
 * English paper common wrong usage
 
